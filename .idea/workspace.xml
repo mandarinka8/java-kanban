@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f35b33eb-5aee-468c-b725-039b2b4c3626" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/java-kanban.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Epic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/StatusTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Subtask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TaskManager.java" afterDir="false" />
+    <list default="true" id="f35b33eb-5aee-468c-b725-039b2b4c3626" name="Changes" comment="commit1">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Epic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Epic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Subtask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Subtask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TaskManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +59,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710511791295</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit1">
+      <option name="closed" value="true" />
+      <created>1710512456844</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710512456844</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -75,6 +83,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="commit1" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit1" />
   </component>
 </project>
