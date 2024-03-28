@@ -30,6 +30,12 @@ public class Task {
     public int getId() {
         return id;
     }
+    public int setId(int i) {
+        return id;
+    }
+    public void setStatus(StatusTask status) {
+        this.status = status;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -43,5 +49,6 @@ public class Task {
     public int hashCode() {
         return Objects.hash(id);
     }
+
 }
 

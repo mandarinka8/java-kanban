@@ -1,12 +1,12 @@
 public class Subtask extends Task {
+    private int epicid;
 
-    private Long epicid;
-    public Subtask(String name,String description,StatusTask status,int id, Long epicid) {
+    public Subtask(String name,String description,StatusTask status,int id, int epicid) {
         super(name,description,status,id);
         this.epicid = epicid;
     }
 
-    public Long getEpicid() {
+    public Integer getEpicid() {
         return epicid;
     }
 }
