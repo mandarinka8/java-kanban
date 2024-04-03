@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f35b33eb-5aee-468c-b725-039b2b4c3626" name="Changes" comment="commit4">
+    <list default="true" id="f35b33eb-5aee-468c-b725-039b2b4c3626" name="Changes" comment="commit5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Epic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HistoryManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InMemoryHistoryManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InMemoryTaskManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Managers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StatusTask.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Subtask.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TaskManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestTaskManager.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711645922614</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="commit5">
+      <option name="closed" value="true" />
+      <created>1711733096830</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711733096831</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -189,7 +187,8 @@
     <MESSAGE value="commit2" />
     <MESSAGE value="commit3" />
     <MESSAGE value="commit4" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit4" />
+    <MESSAGE value="commit5" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit5" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/java_kanban$TestTaskManager_testEqualsEpicsShouldBeEqualsIfIdEquals.ic" NAME="TestTaskManager.testEqualsEpicsShouldBeEqualsIfIdEquals Coverage Results" MODIFIED="1711643174768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
