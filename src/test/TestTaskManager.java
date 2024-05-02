@@ -15,8 +15,8 @@ public class TestTaskManager {
     InMemoryHistoryManager historyManager = new InMemoryHistoryManager();
 
 
-    //@Test
-    /*void addNewTask() {
+   /* @Test
+    void addNewTask() {
         Task task = new Task("Test addNewTask", "Test addNewTask description", StatusTask.NEW, taskManager.counterId());
         taskManager.createTask(task);
 
