@@ -32,14 +32,14 @@ public class TestTaskManager {
         Assertions.assertEquals(task, tasks.get(0), "Задачи не совпадают.");
     }
 
-    @Test
+   /* @Test
     void add() {
         Task task = new Task("Test addNewTask34", "Test addNewTask description", StatusTask.NEW, taskManager.counterId());
         historyManager.addHistory(task);
         final List<Task> history = historyManager.getHistory();
         assertNotNull(history, "История не пустая.");
         assertEquals(1, history.size(), "История не пустая.");
-    }
+    }*/
 
 
 

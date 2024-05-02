@@ -40,7 +40,7 @@ public class InMemoryTaskManager implements TaskManager {
     @Override
     public Task gettingTask(int id) {
         if (taskMap.containsKey(id)) {
-            historyOfView.add(taskMap.get(id));
+            //historyOfView.add(taskMap.get(id));
             return taskMap.get(id);
 
         }
