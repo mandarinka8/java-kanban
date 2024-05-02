@@ -89,7 +89,7 @@ public class InMemoryTaskManager implements TaskManager {
     }
 
     @Override
-    public void checkEpic(int epicId){
+    public void checkEpic(int epicId) {
         Epic thisEpic = epicMap.get(epicId);
         ArrayList<Integer> subtasksIdInThisEpic = thisEpic.getSubTaskIds();
         if (subtasksIdInThisEpic.size() == 0) {
