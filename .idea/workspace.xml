@@ -4,8 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f35b33eb-5aee-468c-b725-039b2b4c3626" name="Changes" comment="commit5">
+    <list default="true" id="f35b33eb-5aee-468c-b725-039b2b4c3626" name="Changes" comment="commit6">
+      <change afterPath="$PROJECT_DIR$/src/managers/CustLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/managers/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Managers/HistoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/managers/HistoryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Managers/InMemoryHistoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/managers/InMemoryHistoryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Managers/InMemoryTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/managers/InMemoryTaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Managers/Managers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/managers/Managers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Managers/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/managers/TaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tasks/Epic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/Epic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tasks/StatusTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/StatusTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tasks/Subtask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/Subtask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tasks/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test/TestTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestTaskManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +35,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -31,20 +46,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "sprint__6-solution",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="" />
@@ -54,7 +69,7 @@
     <configuration name="TestTaskManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban" />
       <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.TestTaskManager" />
+      <option name="MAIN_CLASS_NAME" value="test.TestTaskManager" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -63,7 +78,7 @@
     <configuration name="TestTaskManager.testCreateTaskTaskWithIdShouldNotConflictWithTaskInTaskManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban" />
       <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.TestTaskManager" />
+      <option name="MAIN_CLASS_NAME" value="test.TestTaskManager" />
       <option name="METHOD_NAME" value="testCreateTaskTaskWithIdShouldNotConflictWithTaskInTaskManager" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -73,7 +88,7 @@
     <configuration name="TestTaskManager.testEqualsEpicsShouldBeEqualsIfIdEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban" />
       <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.TestTaskManager" />
+      <option name="MAIN_CLASS_NAME" value="test.TestTaskManager" />
       <option name="METHOD_NAME" value="testEqualsEpicsShouldBeEqualsIfIdEquals" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -83,7 +98,7 @@
     <configuration name="TestTaskManager.testEqualsSubtasksShouldBeEqualsIfIdEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban" />
       <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.TestTaskManager" />
+      <option name="MAIN_CLASS_NAME" value="test.TestTaskManager" />
       <option name="METHOD_NAME" value="testEqualsSubtasksShouldBeEqualsIfIdEquals" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -93,7 +108,7 @@
     <configuration name="TestTaskManager.testGetDefaultTaskManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban" />
       <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.TestTaskManager" />
+      <option name="MAIN_CLASS_NAME" value="test.TestTaskManager" />
       <option name="METHOD_NAME" value="testGetDefaultTaskManager" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -167,7 +182,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711733096831</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="commit6">
+      <option name="closed" value="true" />
+      <created>1712165559689</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712165559689</updated>
+    </task>
+    <task id="LOCAL-00008" summary="commit6">
+      <option name="closed" value="true" />
+      <created>1712165726167</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712165726167</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,7 +219,8 @@
     <MESSAGE value="commit3" />
     <MESSAGE value="commit4" />
     <MESSAGE value="commit5" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit5" />
+    <MESSAGE value="commit6" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit6" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/java_kanban$TestTaskManager_testEqualsEpicsShouldBeEqualsIfIdEquals.ic" NAME="TestTaskManager.testEqualsEpicsShouldBeEqualsIfIdEquals Coverage Results" MODIFIED="1711643174768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

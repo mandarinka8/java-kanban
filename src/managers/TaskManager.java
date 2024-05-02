@@ -1,6 +1,6 @@
-package Managers;
-import Tasks.*;
-import java.util.HashMap;
+package managers;
+import tasks.*;
+
 import java.util.List;
 
 public interface TaskManager {
@@ -21,7 +21,7 @@ public interface TaskManager {
     Task gettingSubtask(int id);
     void deleteAllSubtaskId(int id);
     void deleteAllSubtask();
-    List<Task> getHistory();
+    //List<Task> getHistory();
 
     }
 

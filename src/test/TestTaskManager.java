@@ -1,9 +1,9 @@
-package Test;
+package test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import Tasks.*;
-import Managers.*;
-import Managers.Managers;
+import tasks.*;
+import managers.*;
+import managers.Managers;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

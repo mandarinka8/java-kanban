@@ -1,8 +1,8 @@
-package Managers;
+package managers;
 
 
-import Tasks.*;
-import Managers.TaskManager;
+import tasks.*;
+
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.List;
@@ -189,14 +189,14 @@ public class InMemoryTaskManager implements TaskManager {
 
     }
 
-    @Override
-   public List<Task> getHistory() {
+    //@Override
+   /*public List<Task> getHistory() {
        for (Task history : historyOfView) {
            System.out.println(history);
 
        }
         return  historyManager.getHistory();
-    }
+    }*/
 
 
 

@@ -1,6 +1,4 @@
-package Tasks;
-
-import Tasks.StatusTask;
+package tasks;
 
 public class Subtask extends Task {
     private int epicid;
