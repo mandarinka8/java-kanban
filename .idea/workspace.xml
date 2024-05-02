@@ -102,11 +102,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestTaskManager.testCreateTaskTaskWithIdShouldNotConflictWithTaskInTaskManager" />
         <item itemvalue="JUnit.TestTaskManager.testGetDefaultTaskManager" />
         <item itemvalue="JUnit.TestTaskManager.testEqualsSubtasksShouldBeEqualsIfIdEquals" />
-        <item itemvalue="JUnit.TestTaskManager" />
         <item itemvalue="JUnit.TestTaskManager.testEqualsEpicsShouldBeEqualsIfIdEquals" />
+        <item itemvalue="JUnit.TestTaskManager.testCreateTaskTaskWithIdShouldNotConflictWithTaskInTaskManager" />
+        <item itemvalue="JUnit.TestTaskManager" />
       </list>
     </recent_temporary>
   </component>
