@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+
 public class TestTaskManager {
 
     InMemoryTaskManager taskManager = new InMemoryTaskManager(Managers.getDefaultHistory());
@@ -49,22 +50,23 @@ public class TestTaskManager {
         Epic epic1 = new Epic("c", "d", StatusTask.NEW,4);
 
         Assertions.assertEquals(epic, epic1);
-
     }
+
     @Test
     void testEqualsSubtasksShouldBeEqualsIfIdEquals() {
 
         Subtask subtask = new Subtask("a", "b",  StatusTask.IN_PROGRESS, 5,4);
-        Subtask subtask1 = new Subtask("c","d", StatusTask.NEW,5 ,4 );
+        Subtask subtask1 = new Subtask("c","d", StatusTask.NEW,5,4);
 
         Assertions.assertEquals(subtask, subtask1);
-
     }
+
     @Test
     void testGetDefaultTaskManager() {
         TaskManager taskManager = Managers.getDefault();
         Assertions.assertTrue(taskManager instanceof InMemoryTaskManager);
     }
+
     @Test
     void testid() {
         Task task1 = new Task("a", "b", StatusTask.NEW, taskManager.counterId());
