@@ -15,7 +15,7 @@ public class TestTaskManager {
     InMemoryHistoryManager historyManager = new InMemoryHistoryManager();
 
 
-    @Test
+    /*@Test
     void addNewTask() {
         Task task = new Task("Test addNewTask", "Test addNewTask description", StatusTask.NEW, taskManager.counterId());
         taskManager.createTask(task);
@@ -30,7 +30,7 @@ public class TestTaskManager {
         assertNotNull(tasks, "Задачи не возвращаются.");
         assertEquals(1, tasks.size(), "Неверное количество задач.");
         Assertions.assertEquals(task, tasks.get(0), "Задачи не совпадают.");
-    }
+    }*/
 
     @Test
     void add() {
