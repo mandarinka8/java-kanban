@@ -1,8 +1,6 @@
 package managers;
 
-
 import tasks.*;
-
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +13,7 @@ public class InMemoryTaskManager implements TaskManager {
     private final Map<Integer, Epic> epicMap = new HashMap<>();
     private final Map<Integer, Subtask> subtaskMap = new HashMap<>();
     private final List<Task> historyOfView = new ArrayList<>();
-    //private final int SIZE = 10;
+
     private HistoryManager historyManager;
 
     public InMemoryTaskManager(HistoryManager historyManager) {
@@ -175,15 +173,21 @@ public class InMemoryTaskManager implements TaskManager {
 
     }
 
-    //@Override
-   /*public List<Task> getHistory() {
+    @Override
+   public List<Task> getHistory() {
        for (Task history : historyOfView) {
            System.out.println(history);
 
        }
         return  historyManager.getHistory();
-    }*/
+    }
 
+ public  List<Task> removeHistory(int id) {
+        if (!historyOfView.contains(id)) {
+            historyOfView.remove(id);
+        }
+        return historyOfView;
+    }
 
 
 

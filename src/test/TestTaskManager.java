@@ -14,12 +14,15 @@ public class TestTaskManager {
     InMemoryTaskManager taskManager = new InMemoryTaskManager(Managers.getDefaultHistory());
     InMemoryHistoryManager historyManager = new InMemoryHistoryManager();
 
+    Task task1;
+    Task task2;
+    Task task3;
+    CustLinkedList custLinkedList;
 
     @Test
     void addNewTask() {
         Task task = new Task("Test addNewTask", "Test addNewTask description", StatusTask.NEW, taskManager.counterId());
-        taskManager.createTask(task);
-
+        taskManager.createTask(task1);
         final Task savedTask = taskManager.gettingTask(task.getId());
 
         Assertions.assertNotNull(savedTask, "Задача не найдена.");
@@ -77,4 +80,18 @@ public class TestTaskManager {
         Assertions.assertTrue(task1.getId() == 100);
     }
 
+    @Test
+    void addAndGetHistory() {
+        task1 = new Task("1", "1", StatusTask.NEW,taskManager.counterId());
+        taskManager.createTask(task1);
+        task2 = new Task("2", "2", StatusTask.NEW,taskManager.counterId());
+        taskManager.createTask(task2);
+        task3 = new Task("3", "3", StatusTask.NEW,taskManager.counterId());
+        taskManager.createTask(task3);
+
+
+        historyManager.addHistory(task1);
+        assertFalse(historyManager.getHistory().isEmpty(), "История пустая.");
+        assertEquals(task1, historyManager.getHistory().get(0), "Задача не совпадает.");
+    }
 }

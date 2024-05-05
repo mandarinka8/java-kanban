@@ -77,4 +77,18 @@ public class TestTaskManager {
         Assertions.assertTrue(task1.getId() == 100);
     }
 
+    @Test
+    void addAndGetHistory() {
+        task1 = new Task("1", "1", StatusTask.NEW,taskManager.counterId());
+        taskManager.createTask(task1);
+        task2 = new Task("2", "2", StatusTask.NEW,taskManager.counterId());
+        taskManager.createTask(task2);
+        task3 = new Task("3", "3", StatusTask.NEW,taskManager.counterId());
+        taskManager.createTask(task3);
+        custLinkedList = new CustLinkedList();
+
+        historyManager.addHistory(task1);
+        assertFalse(historyManager.getHistory().isEmpty(), "История пустая.");
+        assertEquals(task1, historyManager.getHistory().get(0), "Задача не совпадает.");
+    }
 }

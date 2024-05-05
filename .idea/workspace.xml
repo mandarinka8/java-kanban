@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f35b33eb-5aee-468c-b725-039b2b4c3626" name="Changes" comment="пробелы!!!">
+    <list default="true" id="f35b33eb-5aee-468c-b725-039b2b4c3626" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/managers/InMemoryHistoryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/managers/InMemoryHistoryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/managers/InMemoryTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/managers/InMemoryTaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/managers/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/managers/TaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tasks/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/TestTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestTaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test/TestTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/test/TestTaskManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,51 +45,69 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "76fa58b2",
-    "jdk.selected.JAVA_MODULE": "21",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;206350f5&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;21&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestTaskManager.testCreateTaskTaskWithIdShouldNotConflictWithTaskInTaskManager">
+  <component name="RunManager" selected="JUnit.TestTaskManager.addNewTask">
     <configuration name="TestTaskManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban" />
-      <option name="PACKAGE_NAME" value="Test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.TestTaskManager" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestTaskManager.testCreateTaskTaskWithIdShouldNotConflictWithTaskInTaskManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestTaskManager.addAndGetHistory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban" />
-      <option name="PACKAGE_NAME" value="Test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.TestTaskManager" />
-      <option name="METHOD_NAME" value="testCreateTaskTaskWithIdShouldNotConflictWithTaskInTaskManager" />
+      <option name="METHOD_NAME" value="addAndGetHistory" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestTaskManager.testEqualsEpicsShouldBeEqualsIfIdEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestTaskManager.addNewTask" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban" />
-      <option name="PACKAGE_NAME" value="Test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.TestTaskManager" />
-      <option name="METHOD_NAME" value="testEqualsEpicsShouldBeEqualsIfIdEquals" />
+      <option name="METHOD_NAME" value="addNewTask" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -111,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestTaskManager.addNewTask" />
+        <item itemvalue="JUnit.TestTaskManager.addAndGetHistory" />
+        <item itemvalue="JUnit.TestTaskManager" />
         <item itemvalue="JUnit.TestTaskManager.testGetDefaultTaskManager" />
         <item itemvalue="JUnit.TestTaskManager.testEqualsSubtasksShouldBeEqualsIfIdEquals" />
-        <item itemvalue="JUnit.TestTaskManager.testEqualsEpicsShouldBeEqualsIfIdEquals" />
-        <item itemvalue="JUnit.TestTaskManager.testCreateTaskTaskWithIdShouldNotConflictWithTaskInTaskManager" />
-        <item itemvalue="JUnit.TestTaskManager" />
       </list>
     </recent_temporary>
   </component>
@@ -264,7 +288,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714674913365</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="commit">
+      <option name="closed" value="true" />
+      <created>1714748558614</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1714748558614</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -279,7 +311,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit" />
     <MESSAGE value="commit1" />
     <MESSAGE value="commit2" />
     <MESSAGE value="commit3" />
@@ -289,7 +320,8 @@
     <MESSAGE value="1" />
     <MESSAGE value="пробелы" />
     <MESSAGE value="пробелы!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="пробелы!!!" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/java_kanban$TestTaskManager_testEqualsEpicsShouldBeEqualsIfIdEquals.ic" NAME="TestTaskManager.testEqualsEpicsShouldBeEqualsIfIdEquals Coverage Results" MODIFIED="1711643174768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
