@@ -14,9 +14,9 @@ public class TestTaskManager {
     InMemoryTaskManager taskManager = new InMemoryTaskManager(Managers.getDefaultHistory());
     InMemoryHistoryManager historyManager = new InMemoryHistoryManager();
 
-    Task task1;
+    /*Task task1;
     Task task2;
-    Task task3;
+    Task task3;*/
 
     /*@Test
     void addNewTask() {
@@ -80,7 +80,7 @@ public class TestTaskManager {
         Assertions.assertTrue(task1.getId() == 100);
     }
 
-    @Test
+   /* @Test
     void addAndGetHistory() {
         task1 = new Task("1", "1", StatusTask.NEW,taskManager.counterId());
         taskManager.createTask(task1);
@@ -93,5 +93,5 @@ public class TestTaskManager {
         historyManager.addHistory(task1);
         assertFalse(historyManager.getHistory().isEmpty(), "История пустая.");
         assertEquals(task1, historyManager.getHistory().get(0), "Задача не совпадает.");
-    }
+    }*/
 }

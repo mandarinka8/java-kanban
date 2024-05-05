@@ -14,15 +14,15 @@ public class TestTaskManager {
     InMemoryTaskManager taskManager = new InMemoryTaskManager(Managers.getDefaultHistory());
     InMemoryHistoryManager historyManager = new InMemoryHistoryManager();
 
-    Task task1;
+    /*Task task1;
     Task task2;
-    Task task3;
+    Task task3;*/
 
 
     @Test
     void addNewTask() {
         Task task = new Task("Test addNewTask", "Test addNewTask description", StatusTask.NEW, taskManager.counterId());
-        taskManager.createTask(task1);
+        taskManager.createTask(task);
         final Task savedTask = taskManager.gettingTask(task.getId());
 
         Assertions.assertNotNull(savedTask, "Задача не найдена.");
