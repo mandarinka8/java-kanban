@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f35b33eb-5aee-468c-b725-039b2b4c3626" name="Changes" comment="commit 8">
-      <change beforePath="$PROJECT_DIR$/src/test/TestTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestTaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test/TestTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/test/TestTaskManager.java" afterDir="false" />
-    </list>
+    <list default="true" id="f35b33eb-5aee-468c-b725-039b2b4c3626" name="Changes" comment="commit 8" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +47,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "32873f31",
+    "git-widget-placeholder": "f2e4b53f",
     "jdk.selected.JAVA_MODULE": "21",
     "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
