@@ -14,6 +14,9 @@ public class TestTaskManager {
     InMemoryTaskManager taskManager = new InMemoryTaskManager(Managers.getDefaultHistory());
     InMemoryHistoryManager historyManager = new InMemoryHistoryManager();
 
+    Task task1;
+    Task task2;
+    Task task3;
 
     /*@Test
     void addNewTask() {

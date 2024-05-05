@@ -17,7 +17,7 @@ public class TestTaskManager {
     Task task1;
     Task task2;
     Task task3;
-    CustLinkedList custLinkedList;
+
 
     @Test
     void addNewTask() {
