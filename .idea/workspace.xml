@@ -23,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="0c1e1d297d8ab666e91fe270391c01845f4ee633" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,7 +49,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "0c1e1d29",
+    "git-widget-placeholder": "sprint__6-solution",
     "jdk.selected.JAVA_MODULE": "21",
     "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
@@ -59,7 +59,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestTaskManager.addNewTask">
+  <component name="RunManager" selected="JUnit.TestTaskManager">
     <configuration name="TestTaskManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban" />
       <extension name="coverage">
@@ -71,22 +71,6 @@
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.TestTaskManager" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestTaskManager.addAndGetHistory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="java-kanban" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.TestTaskManager" />
-      <option name="METHOD_NAME" value="addAndGetHistory" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -107,10 +91,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestTaskManager.testEqualsEpicsShouldBeEqualsIfIdEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-kanban" />
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.TestTaskManager" />
+      <option name="METHOD_NAME" value="testEqualsEpicsShouldBeEqualsIfIdEquals" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestTaskManager.testEqualsSubtasksShouldBeEqualsIfIdEquals" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban" />
       <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="test.TestTaskManager" />
+      <option name="MAIN_CLASS_NAME" value="Test.TestTaskManager" />
       <option name="METHOD_NAME" value="testEqualsSubtasksShouldBeEqualsIfIdEquals" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -120,7 +114,7 @@
     <configuration name="TestTaskManager.testGetDefaultTaskManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban" />
       <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="test.TestTaskManager" />
+      <option name="MAIN_CLASS_NAME" value="Test.TestTaskManager" />
       <option name="METHOD_NAME" value="testGetDefaultTaskManager" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -129,11 +123,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestTaskManager" />
         <item itemvalue="JUnit.TestTaskManager.testGetDefaultTaskManager" />
         <item itemvalue="JUnit.TestTaskManager.testEqualsSubtasksShouldBeEqualsIfIdEquals" />
+        <item itemvalue="JUnit.TestTaskManager.testEqualsEpicsShouldBeEqualsIfIdEquals" />
         <item itemvalue="JUnit.TestTaskManager.addNewTask" />
-        <item itemvalue="JUnit.TestTaskManager.addAndGetHistory" />
-        <item itemvalue="JUnit.TestTaskManager" />
       </list>
     </recent_temporary>
   </component>
