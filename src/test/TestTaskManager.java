@@ -81,6 +81,7 @@ public class TestTaskManager {
         assertNotNull(history, "История не пустая.");
         assertEquals(1, history.size(), "История не пустая.");
     }
+
     @Test
     void addAndGetHistory() {
         task1 = new Task("1", "1", StatusTask.NEW,taskManager.counterId());
