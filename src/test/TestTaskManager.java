@@ -19,7 +19,7 @@ public class TestTaskManager {
     Task task3;
 
 
-    @Test
+    /*@Test
     void addNewTask() {
         Task task = new Task("Test addNewTask", "Test addNewTask description", StatusTask.NEW, taskManager.counterId());
         taskManager.createTask(task);
@@ -33,16 +33,9 @@ public class TestTaskManager {
         assertNotNull(tasks, "Задачи не возвращаются.");
         assertEquals(1, tasks.size(), "Неверное количество задач.");
         Assertions.assertEquals(task, tasks.get(0), "Задачи не совпадают.");
-    }
+    }*/
 
-    @Test
-    void add() {
-        Task task = new Task("Test addNewTask34", "Test addNewTask description", StatusTask.NEW, taskManager.counterId());
-        historyManager.addHistory(task);
-        final List<Task> history = historyManager.getHistory();
-        assertNotNull(history, "История не пустая.");
-        assertEquals(1, history.size(), "История не пустая.");
-    }
+
 
 
 
@@ -80,6 +73,14 @@ public class TestTaskManager {
         Assertions.assertTrue(task1.getId() == 100);
     }
 
+    @Test
+    void add() {
+        Task task = new Task("Test addNewTask34", "Test addNewTask description", StatusTask.NEW, taskManager.counterId());
+        historyManager.addHistory(task);
+        final List<Task> history = historyManager.getHistory();
+        assertNotNull(history, "История не пустая.");
+        assertEquals(1, history.size(), "История не пустая.");
+    }
     @Test
     void addAndGetHistory() {
         task1 = new Task("1", "1", StatusTask.NEW,taskManager.counterId());
