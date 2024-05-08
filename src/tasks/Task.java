@@ -1,4 +1,4 @@
-package Tasks;
+package tasks;
 
 import java.util.Objects;
 
@@ -29,12 +29,16 @@ public class Task {
     public StatusTask getStatus() {
         return status;
     }
+
+
     public int getId() {
         return id;
     }
+
     public int setId(int i) {
         return id;
     }
+
     public void setStatus(StatusTask status) {
         this.status = status;
     }
