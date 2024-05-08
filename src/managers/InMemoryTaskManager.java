@@ -53,6 +53,7 @@ public class InMemoryTaskManager implements TaskManager {
     @Override
     public void deleteAllTasksId(int id) {
         taskMap.remove(id);
+        historyManager.remove(id);
     }
 
     @Override
@@ -79,6 +80,7 @@ public class InMemoryTaskManager implements TaskManager {
     @Override
     public void deleteAllEpicId(int id) {
         epicMap.remove(id);
+        historyManager.remove(id);
     }
 
     @Override
@@ -165,6 +167,7 @@ public class InMemoryTaskManager implements TaskManager {
     @Override
     public void deleteAllSubtaskId(int id) {
         subtaskMap.remove(id);
+        historyManager.remove(id);
     }
 
     @Override
