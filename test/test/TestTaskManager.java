@@ -6,13 +6,16 @@ import managers.*;
 import managers.Managers;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import java.io.*;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class TestTaskManager {
 
     InMemoryTaskManager taskManager = new InMemoryTaskManager(Managers.getDefaultHistory());
     InMemoryHistoryManager historyManager = new InMemoryHistoryManager();
+    FileBackedTaskManager filebackedTaskManager = Managers.getFileBacked();
 
     Task task1;
     Task task2;
@@ -94,4 +97,40 @@ public class TestTaskManager {
         assertFalse(historyManager.getHistory().isEmpty(), "История пустая.");
         assertEquals(task1, historyManager.getHistory().get(0), "Задача не совпадает.");
     }
+    @Test
+    void testBackedManager() throws IOException {
+        Task t1 = new Task("1", "1", StatusTask.NEW,taskManager.counterId());
+        Task t2 = new Task("2", "2", StatusTask.NEW,taskManager.counterId());
+
+        filebackedTaskManager.createTask(t1);
+        filebackedTaskManager.createTask(t2);
+
+        File tempFile = File.createTempFile("Tasks", null);
+        FileWriter fw = new FileWriter(tempFile);
+        fw.write(FileBackedTaskManager.toString(t1));
+        fw.write(FileBackedTaskManager.toString(t2));
+        fw.close();
+
+        List<String> currentFileList = new ArrayList<>();
+        List<String> tempFileList = new ArrayList<>();
+
+        FileReader currentReader = new FileReader("SavedTasks.csv");
+        BufferedReader br = new BufferedReader(currentReader);
+        while (br.ready()) {
+            String line = br.readLine();
+            currentFileList.add(line);
+        }
+        br.close();
+
+        FileReader tempReader = new FileReader(tempFile);
+        BufferedReader brT = new BufferedReader(tempReader);
+        while (brT.ready()) {
+            String line = brT.readLine();
+            tempFileList.add(line);
+        }
+        brT.close();
+
+        Assertions.assertArrayEquals(new List[]{tempFileList}, new List[]{currentFileList});
+    }
+
 }
