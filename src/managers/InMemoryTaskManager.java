@@ -9,15 +9,18 @@ import java.util.Map;
 public class InMemoryTaskManager implements TaskManager {
     int id = 100;
 
-    private final Map<Integer, Task> taskMap = new HashMap<>();
-    private final Map<Integer, Epic> epicMap = new HashMap<>();
-    private final Map<Integer, Subtask> subtaskMap = new HashMap<>();
+    protected final Map<Integer, Task> taskMap = new HashMap<>();
+    protected final Map<Integer, Epic> epicMap = new HashMap<>();
+    protected final Map<Integer, Subtask> subtaskMap = new HashMap<>();
     private final List<Task> historyOfView = new ArrayList<>();
 
     private HistoryManager historyManager;
 
     public InMemoryTaskManager(HistoryManager historyManager) {
         this.historyManager = historyManager;
+    }
+
+    public InMemoryTaskManager() {
     }
 
     public int counterId() {
