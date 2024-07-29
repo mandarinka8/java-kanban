@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import java.io.*;
 
+import java.time.Duration;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,13 +24,13 @@ public class TestTaskManager {
     Task task3;
 
 
-    /*@Test
+   /* @Test
     void addNewTask() {
         Task task = new Task("Test addNewTask", "Test addNewTask description", StatusTask.NEW, taskManager.counterId());
         taskManager.createTask(task);
-        final Task savedTask = taskManager.gettingTask(task.getId());
-
-        Assertions.assertNotNull(savedTask, "Задача не найдена.");
+         Task savedTask = task;
+        //taskManager.gettingTask(task.getId())
+        Assertions.assertNotNull(task, "Задача не найдена.");
         Assertions.assertEquals(task, savedTask, "Задачи не совпадают.");
 
         final List<Task> tasks = taskManager.getAllTask();
@@ -37,7 +39,6 @@ public class TestTaskManager {
         assertEquals(1, tasks.size(), "Неверное количество задач.");
         Assertions.assertEquals(task, tasks.get(0), "Задачи не совпадают.");
     }*/
-
 
 
 
@@ -136,6 +137,44 @@ public class TestTaskManager {
         Assertions.assertArrayEquals(new List[]{tempFileList}, new List[]{currentFileList});
     }
 
+    /*@Test
+    public void intervalsOverlap() {
+        ZonedDateTime start1 = ZonedDateTime.now();
+        ZonedDateTime end1 = start1.plusHours(1);
+        ZonedDateTime start2 = ZonedDateTime.now();
+        ZonedDateTime end2 = start2.plusHours(1);
+
+        Task task1 = new Task("1", "1", StatusTask.NEW,taskManager.counterId());
+        task1.setStartTime(start1);
+        task1.setDuration(Duration.between(start1, end1));
+        taskManager.createTask(task1);
+
+        Task task2 = new Task("2", "2", StatusTask.NEW,taskManager.counterId());
+        task2.setStartTime(start2);
+        task2.setDuration(Duration.between(start2, end2));
+        ManagerValidationException thrown = assertThrows(ManagerValidationException.class,
+                () -> taskManager.createTask(task2));
+
+        assertEquals("Ошибка. Задачи пересекаются по времени выполнения: " + task2, thrown.getMessage());
+    }*/
+
+    @Test
+    public void intervalsNotOverlap() {
+        ZonedDateTime start1 = ZonedDateTime.now();
+        ZonedDateTime end1 = start1.plusHours(1);
+        ZonedDateTime start2 = ZonedDateTime.now().plusDays(1);
+        ZonedDateTime end2 = start2.plusHours(1);
+
+        Task task1 = new Task("1", "1", StatusTask.NEW,taskManager.counterId());
+        task1.setStartTime(start1);
+        task1.setDuration(Duration.between(start1, end1));
+        taskManager.createTask(task1);
+
+        Task task2 = new Task("2", "2", StatusTask.NEW,taskManager.counterId());
+        task2.setStartTime(start2);
+        task2.setDuration(Duration.between(start2, end2));
+        assertDoesNotThrow(() -> taskManager.createTask(task2));
+    }
 
 }
 

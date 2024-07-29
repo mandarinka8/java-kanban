@@ -1,15 +1,19 @@
 package tasks;
 
 import managers.TaskType;
+import java.time.Duration;
+import java.time.ZonedDateTime;
 import java.util.Objects;
-
+import java.util.Optional;
 
 public class Task {
      private String name;
      private String description;
      private StatusTask status;
      private int id;
-    protected TaskType taskType;
+     private Duration duration;
+     private ZonedDateTime startTime;
+     protected TaskType taskType;
 
 
     public Task(String name,String description,StatusTask status,int id) {
@@ -18,6 +22,7 @@ public class Task {
         this.status = status;
         this.id = id;
         this.taskType = TaskType.TASK;
+
     }
 
 
@@ -43,12 +48,40 @@ public class Task {
         return taskType;
     }
 
+    public Duration getDuration() {
+        return duration;
+    }
+
+    public ZonedDateTime getStartTime() {
+        return startTime;
+    }
+
     public int setId(int i) {
         return id;
     }
 
     public void setStatus(StatusTask status) {
         this.status = status;
+    }
+
+    public void setDuration(Duration duration) {
+        this.duration = duration;
+    }
+
+    public void setStartTime(ZonedDateTime startTime) {
+        this.startTime = startTime;
+    }
+
+    public  ZonedDateTime getEndTime() {
+        if (Optional.ofNullable(startTime).isPresent()) {
+            if (Optional.ofNullable(duration).isPresent()) {
+                return startTime.plus(duration);
+            } else {
+                return ZonedDateTime.of(startTime.toLocalDateTime(), startTime.getZone());
+            }
+        } else {
+            return null;
+        }
     }
 
     @Override
@@ -64,5 +97,17 @@ public class Task {
         return Objects.hash(id);
     }
 
+    @Override
+    public String toString() {
+        return "Task{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", status=" + status +
+                ", id=" + id +
+                ", duration=" + duration +
+                ", startTime=" + startTime +
+                ", taskType=" + taskType +
+                '}';
+    }
 }
 

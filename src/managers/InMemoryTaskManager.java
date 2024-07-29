@@ -1,18 +1,22 @@
 package managers;
 
 import tasks.*;
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
+import java.time.ZonedDateTime;
+import java.time.Duration;
+
 
 public class InMemoryTaskManager implements TaskManager {
+
     int id = 100;
 
     protected final Map<Integer, Task> taskMap = new HashMap<>();
     protected final Map<Integer, Epic> epicMap = new HashMap<>();
     protected final Map<Integer, Subtask> subtaskMap = new HashMap<>();
     private final List<Task> historyOfView = new ArrayList<>();
+    private final Set<Task> prioritizedTasks = new TreeSet<>(Comparator.comparing(Task::getStartTime));
+
 
     private HistoryManager historyManager;
 
@@ -95,7 +99,7 @@ public class InMemoryTaskManager implements TaskManager {
     public void checkEpic(int epicId) {
         Epic thisEpic = epicMap.get(epicId);
         ArrayList<Integer> subtasksIdInThisEpic = thisEpic.getSubTaskIds();
-        if (subtasksIdInThisEpic.size() == 0) {
+        if (subtasksIdInThisEpic.isEmpty()) {
             thisEpic.setStatus(StatusTask.NEW);
             return;
         }
@@ -117,6 +121,7 @@ public class InMemoryTaskManager implements TaskManager {
                 thisEpic.setStatus(StatusTask.DONE);
             }
         }
+
 
 
 
@@ -195,8 +200,80 @@ public class InMemoryTaskManager implements TaskManager {
         return historyOfView;
     }
 
+    public void EpicDateTime(Epic epic) {
+        if (!epic.getSubTaskIds().isEmpty()) {
+            final Subtask minSubtask = (Subtask) epic.getSubTaskIds().stream()
+                    .map(this::gettingTask)
+                    .min(Comparator.comparing(Task::getStartTime, Comparator.nullsLast(ZonedDateTime::compareTo)))
+                    .orElseThrow();
+            epic.setStartTime(minSubtask.getStartTime());
+
+            final Subtask maxSubtask = (Subtask) epic.getSubTaskIds().stream()
+                    .map(this::gettingTask)
+                    .max(Comparator.comparing(Task::getEndTime, Comparator.nullsFirst(ZonedDateTime::compareTo)))
+                    .orElseThrow();
+            epic.setEndTime(maxSubtask.getStartTime());
+
+            if (Optional.ofNullable(epic.getStartTime()).isPresent()
+                    && Optional.ofNullable(epic.getEndTime()).isPresent()) {
+                epic.setDuration(Duration.between(epic.getStartTime(), epic.getEndTime()));
+            } else {
+                epic.setDuration(null);
+            }
+        } else {
+            epic.setStartTime(null);
+            epic.setDuration(null);
+            epic.setEndTime(null);
+        }
+    }
+
+    private void DateTime(Task task) {
+        if (task.getClass() == Epic.class) {
+            EpicDateTime((Epic) task);
+        } else if (task.getClass() == Subtask.class) {
+            Subtask subtask = (Subtask) task;
+            Epic epic = (Epic) taskMap.get(subtask.getEpicid());
+            if (epic != null)
+                EpicDateTime(epic);
+        }
+    }
+
+    private void addPrioritizedTasks(Task task) {
+        if (Optional.ofNullable(task.getStartTime()).isPresent()) {
+            prioritizedTasks.add(task);
+        }
+    }
+
+    private void validateTask(Task task) throws ManagerValidationException {
+        final List<Task> list = getPrioritizedTasks();
+
+        final boolean isCovered = list.stream()
+                .anyMatch(taskFromStream -> isDateTimeCoverTwoTasks(task, taskFromStream));
+
+        if (isCovered) {
+            throw new ManagerValidationException("Ошибка. Задачи пересекаются по времени выполнения: " + task);
+        }
+    }
+
+    private boolean isDateTimeCoverTwoTasks(Task task1, Task task2) {
+        if (Optional.ofNullable(task1.getStartTime()).isEmpty()
+                || Optional.ofNullable(task1.getEndTime()).isEmpty()
+                || Optional.ofNullable(task2.getStartTime()).isEmpty()
+                || Optional.ofNullable(task2.getEndTime()).isEmpty()) {
+            return false;
+        }
+
+        long start1 = task1.getStartTime().toInstant().toEpochMilli();
+        long end1 = task1.getEndTime().toInstant().toEpochMilli();
+        long start2 = task2.getStartTime().toInstant().toEpochMilli();
+        long end2 = task2.getEndTime().toInstant().toEpochMilli();
+
+        return (start1 - end2) * (start2 - end1) > 0;
+    }
 
 
-
+    public List<Task> getPrioritizedTasks() {
+        return new ArrayList<>(prioritizedTasks);
+    }
 
 }
