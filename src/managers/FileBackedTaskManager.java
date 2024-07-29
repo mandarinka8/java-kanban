@@ -171,7 +171,6 @@ public class FileBackedTaskManager  extends InMemoryTaskManager {
                 String line = br.readLine();
                 String[] splitLine = line.split(",");
                 TaskType taskType = TaskType.valueOf(splitLine[1]);
-                
                 switch (taskType) {
                     case TASK:
                         manager.createTask(fromString(line));
@@ -244,7 +243,6 @@ public class FileBackedTaskManager  extends InMemoryTaskManager {
                 ? Duration.ofMinutes(Integer.parseInt(temp[6].trim())) : null;
         ZonedDateTime endTime = piecesOfLineValidate(temp, 7)
                 ? ZonedDateTime.parse(temp[7]) : null;
-        
         switch (taskType) {
             case TASK:
                 Task task = new Task(taskName, taskDescription, taskStatus, taskId);
