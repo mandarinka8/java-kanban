@@ -200,7 +200,7 @@ public class InMemoryTaskManager implements TaskManager {
         return historyOfView;
     }
 
-    public void EpicDateTime(Epic epic) {
+    public void epicDateTime(Epic epic) {
         if (!epic.getSubTaskIds().isEmpty()) {
             final Subtask minSubtask = (Subtask) epic.getSubTaskIds().stream()
                     .map(this::gettingTask)
@@ -227,14 +227,14 @@ public class InMemoryTaskManager implements TaskManager {
         }
     }
 
-    private void DateTime(Task task) {
+    private void dateTime(Task task) {
         if (task.getClass() == Epic.class) {
-            EpicDateTime((Epic) task);
+            epicDateTime((Epic) task);
         } else if (task.getClass() == Subtask.class) {
             Subtask subtask = (Subtask) task;
             Epic epic = (Epic) taskMap.get(subtask.getEpicid());
             if (epic != null)
-                EpicDateTime(epic);
+                epicDateTime(epic);
         }
     }
 
