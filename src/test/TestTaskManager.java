@@ -13,7 +13,7 @@ import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestTaskManager {
+public  class TestTaskManager  {
 
     InMemoryTaskManager taskManager = new InMemoryTaskManager(Managers.getDefaultHistory());
     InMemoryHistoryManager historyManager = new InMemoryHistoryManager();
@@ -137,7 +137,7 @@ public class TestTaskManager {
         Assertions.assertArrayEquals(new List[]{tempFileList}, new List[]{currentFileList});
     }
 
-    /*@Test
+    @Test
     public void intervalsOverlap() {
         ZonedDateTime start1 = ZonedDateTime.now();
         ZonedDateTime end1 = start1.plusHours(1);
@@ -152,11 +152,11 @@ public class TestTaskManager {
         Task task2 = new Task("2", "2", StatusTask.NEW,taskManager.counterId());
         task2.setStartTime(start2);
         task2.setDuration(Duration.between(start2, end2));
-        ManagerValidationException thrown = assertThrows(ManagerValidationException.class,
+        ManagerValidationException thrown = Assertions.assertThrows(ManagerValidationException.class,
                 () -> taskManager.createTask(task2));
 
         assertEquals("Ошибка. Задачи пересекаются по времени выполнения: " + task2, thrown.getMessage());
-    }*/
+    }
 
     @Test
     public void intervalsNotOverlap() {

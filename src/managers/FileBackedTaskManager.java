@@ -154,14 +154,6 @@ public class FileBackedTaskManager  extends InMemoryTaskManager {
         }
     }
 
-    private String generateCSVData() {
-        StringBuilder csvData = new StringBuilder();
-        csvData.append("id,type,name,status,description,epic,startTime,duration,endTime").append(System.lineSeparator());
-
-        getAllTask().forEach(task -> csvData.append(toString(task)).append(System.lineSeparator()));
-
-        return csvData.toString();
-    }
 
     public static FileBackedTaskManager loadFromFile(File file) {
         FileBackedTaskManager manager = new FileBackedTaskManager();
@@ -229,6 +221,19 @@ public class FileBackedTaskManager  extends InMemoryTaskManager {
                 endTime;
     }
 
+    private static boolean piecesOfLineValidate(String[] temp, int i) {
+        return temp.length > i && !temp[i].trim().isEmpty();
+    }
+
+    public String generateCSVData() {
+        StringBuilder csvData = new StringBuilder();
+        csvData.append("id,type,name,status,description,epic,startTime,duration,endTime").append(System.lineSeparator());
+
+        getAllTask().forEach(task -> csvData.append(toString(task)).append(System.lineSeparator()));
+
+        return csvData.toString();
+    }
+
 
     public static Task fromString(String value) {
         String[] temp = value.split(",");
@@ -265,9 +270,7 @@ public class FileBackedTaskManager  extends InMemoryTaskManager {
         }
     }
 
-    private static boolean piecesOfLineValidate(String[] temp, int i) {
-        return temp.length > i && !temp[i].trim().isEmpty();
-    }
+
 
 
 }
