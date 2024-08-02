@@ -9,6 +9,9 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.Duration;
+import java.time.ZonedDateTime;
+import java.util.Optional;
 
 public class FileBackedTaskManager  extends InMemoryTaskManager {
 
@@ -182,15 +185,53 @@ public class FileBackedTaskManager  extends InMemoryTaskManager {
 
 
     public static String toString(Task task) {
-        String r;
-        r = String.format("%d," + task.getTaskType() + ",%s," + task.getStatus() + ",%s", task.getId(), task.getName(), task.getDescription());
-        if (task.getTaskType() == TaskType.SUBTASK) {
-            StringBuilder sb = new StringBuilder(r);
-            sb.append(",");
-            sb.append(((Subtask) task).getEpicid());
-            r = sb.toString();
+
+        String taskTypes = "";
+        String epic = "";
+        String startTime = "";
+        String duration = "";
+        String endTime = "";
+        if (Optional.ofNullable(task.getStartTime()).isPresent()) {
+            startTime = task.getStartTime().toString();
         }
-        return r + "\n";
+        if (Optional.ofNullable(task.getDuration()).isPresent()) {
+            duration = String.valueOf(task.getDuration().toMinutes());
+        }
+        if (Optional.ofNullable(task.getEndTime()).isPresent()) {
+            endTime = task.getEndTime().toString();
+        }
+
+        if (task.getClass() == Task.class) {
+            taskTypes = TaskType.TASK.toString();
+        } else if (task.getClass() == Epic.class) {
+            taskTypes = TaskType.EPIC.toString();
+        } else if (task.getClass() == Subtask.class) {
+            taskTypes = TaskType.SUBTASK.toString();
+            epic = Integer.toString(((Subtask) task).getEpicid());
+        }
+
+        return task.getId() + "," +
+                taskTypes + "," +
+                task.getName() + "," +
+                task.getStatus() + "," +
+                task.getDescription() + "," +
+                epic + "," +
+                startTime + "," +
+                duration + "," +
+                endTime;
+    }
+
+    private static boolean piecesOfLineValidate(String[] temp, int i) {
+        return temp.length > i && !temp[i].trim().isEmpty();
+    }
+
+    public String generateCSVData() {
+        StringBuilder csvData = new StringBuilder();
+        csvData.append("id,type,name,status,description,epic,startTime,duration,endTime").append(System.lineSeparator());
+
+        getAllTask().forEach(task -> csvData.append(toString(task)).append(System.lineSeparator()));
+
+        return csvData.toString();
     }
 
 
@@ -200,11 +241,18 @@ public class FileBackedTaskManager  extends InMemoryTaskManager {
         TaskType taskType = TaskType.valueOf(temp[1]);
         String taskName = temp[2];
         StatusTask taskStatus = StatusTask.valueOf(temp[3]);
-        String taskDescription = temp[4];
-
+        String taskDescription = piecesOfLineValidate(temp, 4) ? temp[4] : "";
+        ZonedDateTime startTime = piecesOfLineValidate(temp, 5)
+                ? ZonedDateTime.parse(temp[5]) : null;
+        Duration duration = piecesOfLineValidate(temp, 6)
+                ? Duration.ofMinutes(Integer.parseInt(temp[6].trim())) : null;
+        ZonedDateTime endTime = piecesOfLineValidate(temp, 7)
+                ? ZonedDateTime.parse(temp[7]) : null;
         switch (taskType) {
             case TASK:
                 Task task = new Task(taskName, taskDescription, taskStatus, taskId);
+                task.setStartTime(startTime);
+                task.setDuration(duration);
                 return task;
 
             case SUBTASK:
@@ -214,10 +262,15 @@ public class FileBackedTaskManager  extends InMemoryTaskManager {
 
             case EPIC:
                 Epic epic = new Epic(taskName, taskDescription, taskStatus, taskId);
+                epic.setEndTime(endTime);
                 return epic;
 
             default:
                 throw new IllegalArgumentException("Ошибка! Недопустимое значение: " + taskType);
         }
     }
+
+
+
+
 }
